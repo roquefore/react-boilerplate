@@ -1,0 +1,6 @@
+@import 'resources';
+
+.container {
+    @include fullHeight;
+    @include centerContent;
+}

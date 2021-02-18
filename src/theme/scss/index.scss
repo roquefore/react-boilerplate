@@ -1,0 +1,80 @@
+@import 'resources.scss';
+@import 'fonts.scss';
+
+* {
+    @include media(xl) {
+        &::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $paletteGrey_1;
+
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+    }
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Gilroy', sans-serif;
+
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    user-select: none;
+
+    // mobile tap outline/highlight shit
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+    outline: none !important;
+    scrollbar-width: none;
+
+    & input,
+    textarea {
+        // fucking Safari disables inputs if user-select: none;
+        user-select: auto !important;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
+
+html {
+    @include media(xs) {
+        font-size: 16px;
+    }
+    font-size: 15px;
+
+    color: $paletteBlack;
+
+    overflow-x: hidden;
+}
+
+body {
+    @include fullHeight;
+
+    width: 100vw;
+
+    background: $paletteBg;
+}
+
+#app {
+    @include fullHeight;
+    min-width: 100vw;
+
+    background: $paletteBg;
+
+    overflow: scroll;
+}
+
+a {
+    text-decoration: none;
+
+    color: $paletteBlack;
+}
